@@ -1,29 +1,29 @@
 import React, { useContext, useEffect } from 'react'
 import axios from 'axios'
 import { MoviesContext } from '../Components/ContextAPI'
+import SearchBar from '../Components/SearchBar'
 
 
 
 const Movies = () => {
 
-    const { baseURL } = useContext(MoviesContext)
+    const { movies } = useContext(MoviesContext)
 
-    useEffect(() => {
-        fetchData()
-    }, [])
-
-    async function fetchData() {
-        try {
-            const response = await axios.get(baseURL)
-            console.log(response.data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
 
     return (
         <div>
-            Movies
+
+            <SearchBar />
+
+            {movies.length > 0 && movies.map((ele, index) => {
+                return (
+                    <div key={index}>
+                        <img src={ele.Poster} alt={ele.Title} />
+                        <p>{ele.Poster}</p>
+                    </div>
+                )
+            })}
+
         </div>
     )
 }
