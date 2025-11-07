@@ -23,6 +23,8 @@ const ContextAPI = ({ children }) => {
             setLoading(true);
             const url = `${baseURL}${searchParams}${type ? `&type=${type}` : ""}&${apiKey}&page=${page}`;
             const response = await axios.get(url);
+            console.log(url)
+            console.log(response)
 
             if (response.data.Response === "True") {
                 setMovies(response.data.Search);

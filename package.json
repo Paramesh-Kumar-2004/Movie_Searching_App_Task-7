@@ -1,5 +1,6 @@
 {
-  "name": "task-7---react-movie-search-app",
+  "homepage": "https://paramesh-kumar-2004.github.io/Movie_Searching_App_Task-7/",
+  "name": "Movie Search App",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,6 +13,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
     "axios": "^1.13.2",
+    "gh-pages": "^6.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.5",

@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom'
 import Movies from './Pages/Movies'
 import ContextAPI from './Components/ContextAPI'
 import MovieDetails from './Pages/MovieDetails'
@@ -10,7 +10,7 @@ const App = () => {
 
   return (
 
-    <BrowserRouter>
+    <HashRouter>
       <ContextAPI>
 
         <Routes>
@@ -19,7 +19,7 @@ const App = () => {
         </Routes>
 
       </ContextAPI>
-    </BrowserRouter>
+    </HashRouter>
 
   )
 }
