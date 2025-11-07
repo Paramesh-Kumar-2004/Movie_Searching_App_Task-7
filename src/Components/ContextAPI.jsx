@@ -9,6 +9,7 @@ const ContextAPI = ({ children }) => {
     const [type, setType] = useState("");
     const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
+    const [movieDetail, setMovieDetail] = useState([])
 
     const apiKey = "apikey=747591dd";
     const baseURL = "https://www.omdbapi.com/?";
@@ -40,7 +41,7 @@ const ContextAPI = ({ children }) => {
 
     return (
         <MoviesContext.Provider
-            value={{ movies, setMovies, apiKey, baseURL, searchParams, setSearchParams, type, setType, loading, page, setPage }}
+            value={{ movies, setMovies, apiKey, baseURL, searchParams, setSearchParams, type, setType, loading, page, setPage, movieDetail, setMovieDetail }}
         >
             {children}
         </MoviesContext.Provider>

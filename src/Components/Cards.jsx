@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
 import { MoviesContext } from "./ContextAPI";
+import { useNavigate } from "react-router-dom";
 
 const Cards = () => {
 
-    const { movies, loading, page, setPage } = useContext(MoviesContext);
+    const navigate = useNavigate()
+
+    const { movies, loading, page, setPage, setMovieDetail } = useContext(MoviesContext);
+
 
     if (loading) {
         return (
@@ -11,6 +15,11 @@ const Cards = () => {
                 <div className="w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
             </div>
         );
+    }
+
+    async function HandleMoreDetail(data) {
+        setMovieDetail(data || [])
+        navigate("/moviedetails")
     }
 
     return (
@@ -30,6 +39,7 @@ const Cards = () => {
                             />
                             <h3 className="mt-2 font-bold">{movie.Title}</h3>
                             <p className="text-gray-500 text-sm">{movie.Year}</p>
+                            <p className="text-center hover:cursor-pointer text-gray-900 text-sm" onClick={() => HandleMoreDetail(movie)}>More Details</p>
                         </div>
                     ))
                 ) : (
