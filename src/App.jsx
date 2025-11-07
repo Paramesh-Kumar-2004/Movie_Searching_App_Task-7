@@ -5,7 +5,6 @@ import ContextAPI from './Components/ContextAPI'
 import MovieDetails from './Pages/MovieDetails'
 
 
-
 const App = () => {
 
   return (

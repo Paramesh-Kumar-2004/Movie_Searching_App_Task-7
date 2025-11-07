@@ -16,7 +16,7 @@ const MovieDetails = () => {
 
     if (movieDetail.length === 0) {
         return (
-            <div className="align-middle">
+            <div className="align-middle ">
                 <p className="text-center text-gray-500 mt-10 text-xl">
                     No Data Found
                 </p>
@@ -33,7 +33,7 @@ const MovieDetails = () => {
     }
 
     return (
-        <div className="p-6 flex flex-col md:flex-row justify-center gap-6">
+        <div className="p-6 flex flex-col md:flex-row justify-center gap-6 ">
 
             <img
                 src={
@@ -45,18 +45,30 @@ const MovieDetails = () => {
                 className="h-[80vh] w-full md:w-1/3 rounded-lg shadow-lg"
             />
 
-            <div className="md:w-2/3 bg-white p-6 rounded-lg shadow-md flex flex-col justify-between">
+            <div className="md:w-2/3 bg-white p-6 rounded-lg shadow-md">
                 <h1 className="text-3xl font-bold mb-2">{movieDetail.Title}</h1>
                 <p className="text-gray-600 mb-1">
                     <span className="font-semibold">Year:</span> {movieDetail.Year}
                 </p>
                 <p className="text-gray-600 mb-1">
-                    <span className="font-semibold">Type:</span> {movieDetail.Type}
+                    <span className="font-semibold">Genre:</span> {movieDetail.Genre}
+                </p>
+                <p className="text-gray-600 mb-1">
+                    <span className="font-semibold">Director:</span> {movieDetail.Director}
+                </p>
+                <p className="text-gray-600 mb-1">
+                    <span className="font-semibold">Actors:</span> {movieDetail.Actors}
+                </p>
+                <p className="text-gray-600 mb-1">
+                    <span className="font-semibold">Language:</span> {movieDetail.Language}
                 </p>
                 <p className="text-gray-600 mb-4">
-                    <span className="font-semibold">IMDb ID :</span>{" "}
-                    {movieDetail.imdbID}
+                    <span className="font-semibold">IMDb Rating:</span>{" "}
+                    {movieDetail.imdbRating}
                 </p>
+
+                <h2 className="text-xl font-semibold mb-2">Plot</h2>
+                <p className="text-gray-700">{movieDetail.Plot}</p>
 
                 <button
                     onClick={() => navigate(-1)}

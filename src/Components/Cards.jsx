@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { MoviesContext } from "./ContextAPI";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Cards = () => {
 
@@ -18,8 +19,13 @@ const Cards = () => {
     }
 
     async function HandleMoreDetail(data) {
-        setMovieDetail(data || [])
-        navigate("/moviedetails")
+        try {
+            const response = await axios.get(`https://www.omdbapi.com/?i=${data.imdbID}&apikey=747591dd`)
+            setMovieDetail(response.data || [])
+            navigate("/moviedetails")
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
@@ -39,7 +45,7 @@ const Cards = () => {
                             />
                             <h3 className="mt-2 font-bold">{movie.Title}</h3>
                             <p className="text-gray-500 text-sm">{movie.Year}</p>
-                            <p className="text-center hover:cursor-pointer text-gray-900 text-sm" onClick={() => HandleMoreDetail(movie)}>More Details</p>
+                            <p className="text-center hover:cursor-pointer font-bold text-black-900 text-sm" onClick={() => HandleMoreDetail(movie)}>More Details</p>
                         </div>
                     ))
                 ) : (

@@ -18,16 +18,20 @@ const SearchBar = () => {
     }
 
     return (
-        <div className="text-center my-4">
-            <input
-                type="text"
-                value={searchParams ? searchParams.replace("s=", "").replaceAll("+", " ") : ""}
-                onChange={handleSearchParams}
-                className="border-4 border-sky-500 p-2 rounded-lg w-1/2 mb-3 text-lg"
-                placeholder="Search For A Movie..."
-            />
+        <div className="text-center mb-4 py-3">
+            <div>
+                <label className="font-extrabold">Search : </label>
+                <input
+                    type="text"
+                    value={searchParams ? searchParams.replace("s=", "").replaceAll("+", " ") : ""}
+                    onChange={handleSearchParams}
+                    className="border-4 border-sky-500 p-2 rounded-lg w-1/2 mb-3 text-lg"
+                    placeholder="Search For A Movie..."
+                />
+            </div>
 
             <div className="w-full text-center mt-2">
+                <label className="font-extrabold">Filter : </label>
                 <select
                     id="Select"
                     value={type}
