@@ -5,25 +5,27 @@ export const MoviesContext = createContext();
 
 const ContextAPI = ({ children }) => {
     const [movies, setMovies] = useState([]);
-    const [searchParams, setSearchParams] = useState("s=Captain+America");
+    const [searchParams, setSearchParams] = useState("s=Batman");
     const [type, setType] = useState("");
     const [loading, setLoading] = useState(false);
+    const [page, setPage] = useState(1);
 
     const apiKey = "apikey=747591dd";
     const baseURL = "https://www.omdbapi.com/?";
 
     useEffect(() => {
         fetchData();
-    }, [searchParams, type]);
+    }, [searchParams, type, page]);
 
     async function fetchData() {
         try {
             setLoading(true);
-            const url = `${baseURL}${searchParams}${type ? `&type=${type}` : ""}&${apiKey}`;
+            const url = `${baseURL}${searchParams}${type ? `&type=${type}` : ""}&${apiKey}&page=${page}`;
             const response = await axios.get(url);
 
             if (response.data.Response === "True") {
                 setMovies(response.data.Search);
+                console.log("Movies :", response.data.Search)
             } else {
                 setMovies([]);
             }
@@ -38,7 +40,7 @@ const ContextAPI = ({ children }) => {
 
     return (
         <MoviesContext.Provider
-            value={{ movies, setMovies, apiKey, baseURL, searchParams, setSearchParams, type, setType, loading }}
+            value={{ movies, setMovies, apiKey, baseURL, searchParams, setSearchParams, type, setType, loading, page, setPage }}
         >
             {children}
         </MoviesContext.Provider>
