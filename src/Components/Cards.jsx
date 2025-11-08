@@ -33,7 +33,7 @@ const Cards = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {movies.length > 0 ? (
                     movies.map((movie, index) => (
-                        <div key={index} className="bg-white shadow-2xl p-2 rounded hover:shadow-blue-500/50 hover:shadow-lg">
+                        <div key={index} className="bg-white shadow-2xl p-2 rounded hover:shadow-blue-500/50 hover:shadow-lg border-2 border-gray-200 flex flex-col justify-between">
                             <img
                                 src={
                                     movie.Poster !== "N/A"
@@ -45,7 +45,9 @@ const Cards = () => {
                             />
                             <h3 className="mt-2 font-bold">{movie.Title}</h3>
                             <p className="text-gray-500 text-sm">{movie.Year}</p>
-                            <p className="text-center hover:cursor-pointer font-bold text-black-900 text-sm" onClick={() => HandleMoreDetail(movie)}>More Details</p>
+                            <div className="text-center hover:cursor-pointer font-bold text-black-900 text-sm" >
+                                <button className="bg-sky-400 p-1 rounded-md text-black hover:cursor-pointer" onClick={() => HandleMoreDetail(movie)}>More Details</button>
+                            </div>
                         </div>
                     ))
                 ) : (
