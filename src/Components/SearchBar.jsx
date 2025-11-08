@@ -36,7 +36,7 @@ const SearchBar = () => {
                     id="Select"
                     value={type}
                     onChange={handleTypeChange}
-                    className="py-2 px-3 mb-2 w-[50%] min-w-56 outline-none rounded-xl border-4 border-purple-600 text-lg font-extrabold"
+                    className="py-2 px-3 mb-2 w-[50%] min-w-56 outline-none rounded-xl border-4 border-purple-600 text-lg font-extrabold hover:cursor-pointer"
                 >
                     <option value="">All</option>
                     <option value="movie" className="text-lg text-cyan-500 font-bold">
