@@ -33,7 +33,7 @@ const Cards = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {movies.length > 0 ? (
                     movies.map((movie, index) => (
-                        <div key={index} className="bg-white shadow p-2 rounded hover:shadow-md">
+                        <div key={index} className="bg-white shadow-2xl p-2 rounded hover:shadow-blue-500/50 hover:shadow-lg">
                             <img
                                 src={
                                     movie.Poster !== "N/A"
