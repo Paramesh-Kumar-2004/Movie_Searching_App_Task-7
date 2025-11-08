@@ -23,7 +23,7 @@ const MovieDetails = () => {
                 <div className="text-center">
                     <button
                         onClick={() => navigate(-1)}
-                        className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
+                        className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg hover:cursor-pointer"
                     >
                         Back
                     </button>
@@ -72,7 +72,7 @@ const MovieDetails = () => {
 
                 <button
                     onClick={() => navigate(-1)}
-                    className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
+                    className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg hover:cursor-pointer"
                 >
                     Back
                 </button>
